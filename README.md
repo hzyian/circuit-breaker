@@ -42,10 +42,8 @@ public boolean fallbackMethod(String key, Object obj, int seconds) {
     执行fallback内容
 }
 ```
-1）commandKey：指明使用何种熔断器
-
-2）fallbackMethodName：指明fallback方法
-
+1）commandKey：指明使用何种熔断器 <br>
+2）fallbackMethodName：指明fallback方法 <br>
 3）ignoreExecption：忽略的异常类型，即该异常不会用于熔断器计数，会直接抛出
 
 #### 3:接收日志
