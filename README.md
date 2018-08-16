@@ -48,9 +48,23 @@ public boolean fallbackMethod(String key, Object obj, int seconds) {
 
 3）ignoreExecption：忽略的异常类型，即该异常不会用于熔断器计数，会直接抛出
 
-#### 3:启动熔断器
+#### 3:接收日志
+继承DefaultCircuitBreakerListener类,每30s会打印一次熔断器日志信息，主要包括如下信息：
+```
+    //状态
+    private boolean status;
+    //熔断器当前失败数
+    private int failCount;
+    //熔断器时间统计窗口
+    private long statisticalWindow;
+    //熔断器失败数
+    private int maxFailCount;
+    //熔断器熔断次数
+    private long circuitBreakerCount;
+```
 
-#### 4:启动熔断器
+
+#### 4:启动
 ```
 //如果需要监听熔断器内部状态日志，需要监听熔断器
 CircuitBreakerBuilder.listener(new listener日志);
