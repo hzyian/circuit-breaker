@@ -5,7 +5,7 @@
 
 hystrix提供两种熔断降级的方式：1:基于线程，2:基于信号量；不管哪种方式都需要不断的创建新的对象（用线程模式，会频繁的线程切换），会加快ygc的回收频率，对于时间敏感型接口影响比较大。
 
-所以需要一套更为简洁内存熔断器
+所以需要一套更为简洁内存熔断器，本熔断器基于AspectJ实现
 
 # 流程
 ![Aaron Swartz](https://raw.githubusercontent.com/hzyian/circuit-breaker/master/%E7%86%94%E6%96%AD%E5%99%A8%E9%80%BB%E8%BE%91.png)
